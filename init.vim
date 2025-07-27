@@ -27,7 +27,7 @@ set clipboard=unnamedplus
 " https://github.com/42school/norminette
 " Norminette requires Python >=3.10.
 function Norm42()
-	write
+	update
 	set errorformat =%P%f:\ Error!
 	set errorformat +=Error%.%#(line:%*[\ ]%l\\,\ col:%*[\ ]%c)%.%m
 	set errorformat +=%-G%.%#
@@ -38,7 +38,7 @@ function Norm42()
 endfunction
 
 function BuildC()
-	write
+	update
 	set makeprg=gcc\ -Wall\ -Wextra\ -Werror
 	compiler gcc
 	make %
@@ -52,6 +52,7 @@ map <F6> :call Norm42()<CR>
 nmap <leader>ev :vs $MYVIMRC<CR>
 nmap <leader>so :up %<CR> :so %<CR>
 nmap <leader>q :q<CR>
+nmap <leader>/ gcc
 nmap <leader>t :vs \| :term <CR> 
 nmap <leader>w :vs<CR>
 nmap <leader>W :sp<CR>
