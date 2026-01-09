@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
-
+  lazy = false, 
   opts = {
     ensure_installed = {
       "bash", "c", "diff", "html", "lua", "luadoc",
